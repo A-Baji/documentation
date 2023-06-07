@@ -2,6 +2,32 @@
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
+    <script>
+      (function(h,o,u,n,d) {
+        h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+        d=o.createElement(u);d.async=1;d.src=n
+        n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+      })(window,document,'script','https://www.datadoghq-browser-agent.com/us1/v4/datadog-rum.js','DD_RUM')
+      window.DD_RUM.onReady(function() {
+        window.DD_RUM.init({
+          clientToken: 'pub449343093761bcdee5ce31a30f90596c',
+          applicationId: '7c38204b-fae7-4e8d-9060-41e4d312c405',
+          site: 'datadoghq.com',
+          service: 'test',
+          env: '<ENV_NAME>',
+          // Specify a version number to identify the deployed version of your application in Datadog 
+          // version: '1.0.0',
+          sessionSampleRate: 100,
+          sessionReplaySampleRate: 100,
+          trackUserInteractions: true,
+          trackResources: true,
+          trackLongTasks: true,
+          defaultPrivacyLevel: 'mask-user-input',
+        });
+    
+        window.DD_RUM.startSessionReplayRecording();
+      })
+    </script>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
